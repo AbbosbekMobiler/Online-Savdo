@@ -1,11 +1,13 @@
 package abbosbek.mobiler.onlinesavdo.fragments
 
 import abbosbek.mobiler.onlinesavdo.R
+import abbosbek.mobiler.onlinesavdo.activities.ShoppingActivity
 import abbosbek.mobiler.onlinesavdo.data.User
 import abbosbek.mobiler.onlinesavdo.databinding.FragmentRegisterBinding
 import abbosbek.mobiler.onlinesavdo.utils.RegisterValidation
 import abbosbek.mobiler.onlinesavdo.utils.Resource
 import abbosbek.mobiler.onlinesavdo.viewModel.RegisterViewModel
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +16,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -39,6 +42,10 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
 
         binding.apply {
 
+            tvDontHaveAnAccount.setOnClickListener{
+                findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+            }
+
             btnLogin.setOnClickListener {
                 val user = User(
                     edFirstName.text.toString().trim(),
@@ -57,11 +64,13 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         binding.btnLogin.startAnimation()
                     }
                     is Resource.Success ->{
-                        Log.d("test",it.data.toString())
                         binding.btnLogin.revertAnimation()
+                        Intent(requireActivity(), ShoppingActivity::class.java).also { intent->
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
+                        }
                     }
                     is Resource.Error ->{
-                        Log.e("RegisterFragmentTest",it.message.toString())
                         binding.btnLogin.revertAnimation()
                     }
                     else -> Unit
