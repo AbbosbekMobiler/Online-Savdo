@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="abbosbek.mobiler.onlinesavdo.fragments.LoginFragment"
+        android:name="abbosbek.mobiler.onlinesavdo.fragments.loginRegister.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/introductionFragment"
-        android:name="abbosbek.mobiler.onlinesavdo.fragments.IntroductionFragment"
+        android:name="abbosbek.mobiler.onlinesavdo.fragments.loginRegister.IntroductionFragment"
         android:label="IntroductionFragment"
         tools:layout="@layout/fragment_introduction">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="abbosbek.mobiler.onlinesavdo.fragments.RegisterFragment"
+        android:name="abbosbek.mobiler.onlinesavdo.fragments.loginRegister.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountOptionsFragment"
-        android:name="abbosbek.mobiler.onlinesavdo.fragments.AccountOptionsFragment"
+        android:name="abbosbek.mobiler.onlinesavdo.fragments.loginRegister.AccountOptionsFragment"
         android:label="AccountOptionsFragment"
         tools:layout="@layout/fragment_account_options">
         <action

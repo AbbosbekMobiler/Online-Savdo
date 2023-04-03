@@ -1,4 +1,4 @@
-package abbosbek.mobiler.onlinesavdo.fragments
+package abbosbek.mobiler.onlinesavdo.fragments.loginRegister
 
 import abbosbek.mobiler.onlinesavdo.R
 import abbosbek.mobiler.onlinesavdo.activities.ShoppingActivity
