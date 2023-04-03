@@ -1,4 +1,4 @@
-package abbosbek.mobiler.onlinesavdo.fragments
+package abbosbek.mobiler.onlinesavdo.fragments.loginRegister
 
 import abbosbek.mobiler.onlinesavdo.R
 import abbosbek.mobiler.onlinesavdo.activities.ShoppingActivity
@@ -9,7 +9,6 @@ import abbosbek.mobiler.onlinesavdo.utils.Resource
 import abbosbek.mobiler.onlinesavdo.viewModel.RegisterViewModel
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
